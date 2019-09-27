@@ -24,7 +24,7 @@
   <parent>
     <groupId>org.codehaus.mojo</groupId>
     <artifactId>mojo-parent</artifactId>
-    <version>40</version>
+    <version>50</version>
   </parent>
   <artifactId>flatten-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
@@ -194,9 +194,11 @@
       </activation>
       <build>
         <plugins>
+          <!--
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-invoker-plugin</artifactId>
+            <version>3.2.1</version>
             <executions>
               <execution>
                 <goals>
@@ -223,8 +225,11 @@
               </goals>
               <projectsDirectory>src/it/projects</projectsDirectory>
               <postBuildHookScript>verify</postBuildHookScript>
+              <skipInvocation>${invoker.skip}</skipInvocation>
+              <skipInstallation>${invoker.skip}</skipInstallation>
             </configuration>
           </plugin>
+          -->
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>mrm-maven-plugin</artifactId>
